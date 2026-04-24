@@ -7,7 +7,6 @@
   <meta name="theme-color" content="#07111f" />
   <title>Deyvin Garcias | Portafoli</title>
 
-  <!-- Font opcional (pots eliminar-la si el vols 100% sense CDN) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -117,13 +116,11 @@
     nav a {
       color: var(--muted);
       font-weight: 500;
-      transition: color 0.2s ease, opacity 0.2s ease;
+      transition: color 0.2s ease;
     }
     nav a:hover { color: var(--text); }
 
-    .hero {
-      padding: 64px 0 24px;
-    }
+    .hero { padding: 64px 0 24px; }
 
     .hero-grid {
       display: grid;
@@ -204,7 +201,7 @@
       border-radius: 999px;
       font-weight: 700;
       border: 1px solid transparent;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
       cursor: pointer;
       white-space: nowrap;
     }
@@ -252,11 +249,7 @@
       overflow: hidden;
     }
 
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    .avatar img { width: 100%; height: 100%; object-fit: cover; }
 
     .stat {
       display: grid;
@@ -269,9 +262,7 @@
     .stat span { color: var(--muted); font-size: 0.92rem; }
     .stat strong { font-size: 1rem; }
 
-    section {
-      padding: 26px 0;
-    }
+    section { padding: 26px 0; }
 
     .section-title {
       font-size: clamp(1.45rem, 3vw, 2rem);
@@ -292,9 +283,7 @@
       box-shadow: var(--shadow);
     }
 
-    .about-card, .contact-card, .skills-card, .letter-card {
-      padding: 28px;
-    }
+    .about-card, .contact-card, .skills-card, .letter-card { padding: 28px; }
 
     .about-grid {
       display: grid;
@@ -302,11 +291,7 @@
       gap: 22px;
     }
 
-    .info-list {
-      display: grid;
-      gap: 14px;
-      margin-top: 18px;
-    }
+    .info-list { display: grid; gap: 14px; margin-top: 18px; }
 
     .info-item {
       display: flex;
@@ -340,18 +325,10 @@
       min-height: 88px;
     }
 
-    .skill strong {
-      display: block;
-      margin-bottom: 6px;
-      color: #f3f7ff;
-    }
-
+    .skill strong { display: block; margin-bottom: 6px; color: #f3f7ff; }
     .skill span { color: var(--muted); font-size: 0.95rem; }
 
-    .accordion {
-      margin-top: 18px;
-      overflow: hidden;
-    }
+    .accordion { margin-top: 18px; display: grid; gap: 12px; }
 
     details {
       border: 1px solid rgba(148, 163, 184, 0.16);
@@ -390,17 +367,58 @@
     details[open] .chev { transform: rotate(180deg); }
 
     .letter-content {
-      padding: 0 20px 20px;
+      padding: 0 24px 24px;
       color: var(--muted);
     }
 
-    .letter-placeholder {
-      margin: 0;
-      padding: 18px;
-      border-radius: 16px;
-      border: 1px dashed rgba(53, 200, 255, 0.3);
-      background: rgba(53, 200, 255, 0.06);
-      color: #d8f7ff;
+    .letter-header {
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+    }
+
+    .letter-header strong {
+      display: block;
+      color: var(--accent);
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+
+    .letter-header span { font-size: 0.92rem; color: var(--muted); }
+
+    .letter-content p { margin: 0 0 12px; line-height: 1.7; }
+    .letter-content p:last-child { margin-bottom: 0; }
+
+    .letter-content ul {
+      margin: 0 0 12px;
+      padding-left: 0;
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+
+    .letter-content ul li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      line-height: 1.6;
+    }
+
+    .letter-content ul li::before {
+      content: "▸";
+      color: var(--accent);
+      flex: 0 0 auto;
+      margin-top: 1px;
+    }
+
+    .letter-content ul li strong { color: var(--text); }
+
+    .letter-sign {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(148, 163, 184, 0.12);
+      color: var(--text);
+      font-weight: 600;
     }
 
     .contact-grid {
@@ -446,36 +464,22 @@
       border-top: 1px solid rgba(148, 163, 184, 0.12);
     }
 
-    /* Animació d’entrada suau amb CSS + JS per activar la classe */
     .reveal {
       opacity: 0;
       transform: translateY(18px);
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
 
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
 
     @media (max-width: 960px) {
-      .hero-grid,
-      .about-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .skills-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+      .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
     @media (max-width: 640px) {
       .hero { padding-top: 28px; }
-      .hero-copy, .hero-side, .about-card, .skills-card, .letter-card, .contact-card {
-        padding: 20px;
-      }
-
+      .hero-copy, .hero-side, .about-card, .skills-card, .letter-card, .contact-card { padding: 20px; }
       nav ul { gap: 12px; }
       .skills-grid { grid-template-columns: 1fr; }
       .btn { width: 100%; }
@@ -494,7 +498,6 @@
         <span class="brand-mark">DG</span>
         <span>Deyvin Garcias</span>
       </a>
-
       <nav aria-label="Navegació principal">
         <ul>
           <li><a href="#sobre-mi">Sobre mi</a></li>
@@ -514,35 +517,26 @@
           <h1>Deyvin Garcias</h1>
           <p class="title">Tècnic en Sistemes i Xarxes | Ciberseguretat</p>
           <p class="lead">
-            Estudiant d’ASIR especialitzat en ciberseguretat, amb interès en xarxes,
-            anàlisi tècnica i millora contínua d’entorns segurs.
+            Estudiant d'ASIR especialitzat en ciberseguretat, amb interès en xarxes,
+            anàlisi tècnica i millora contínua d'entorns segurs.
           </p>
-
           <div class="cta-row">
-            <!-- Canvia l'enllaç de LinkedIn si vols fer servir un altre perfil -->
             <a class="btn btn-primary" href="https://www.linkedin.com/in/deyvin-jose-garcia-morales-1039813b9/" target="_blank" rel="noopener noreferrer">
-              LinkedIn
-              <span aria-hidden="true">↗</span>
+              LinkedIn <span aria-hidden="true">↗</span>
             </a>
-            <!-- El CV ha d'existir a /assets/cv.pdf dins del repositori -->
             <a class="btn btn-secondary" href="/assets/cv.pdf" download>
-              Descarregar CV
-              <span aria-hidden="true">↓</span>
+              Descarregar CV <span aria-hidden="true">↓</span>
             </a>
           </div>
         </article>
 
         <aside class="panel hero-side reveal">
           <div class="profile-card">
-            <div class="avatar" aria-hidden="true">
-              <!-- Si vols una foto, substitueix aquest bloc per: <img src="assets/la-teva-foto.jpg" alt="Foto de Deyvin Garcias"> -->
-              DG
-            </div>
+            <div class="avatar" aria-hidden="true">DG</div>
             <strong style="font-size:1.08rem;">Perfil professional</strong>
             <p style="margin:8px 0 0; color:var(--muted);">
               Base acadèmica en sistemes, xarxes i seguretat. Enfocament pràctic, curiositat tècnica i orientació a entorns professionals.
             </p>
-
             <div class="stat">
               <span>Ubicació</span>
               <strong>Reus, Tarragona, Catalunya, Espanya</strong>
@@ -560,22 +554,10 @@
       <div class="container about-grid">
         <article class="card about-card reveal">
           <h2 class="section-title">Sobre mi</h2>
-          <p class="section-subtitle">
-            Una breu presentació per a docents, reclutadors i empreses.
-          </p>
-          <p>
-            Estic cursant <strong>CFGS Administració de Sistemes Informàtics en Xarxa (ASIR)</strong>
-            amb especialització en <strong>Ciberseguretat</strong>. M’interessa construir una base sòlida en
-            infraestructures, administració i protecció de sistemes.
-          </p>
-          <p>
-            Em motiva l’aprenentatge pràctic, l’anàlisi tècnica i la resolució de problemes reals.
-            Busco seguir desenvolupant-me en xarxes, sistemes, seguretat ofensiva i bones pràctiques de protecció.
-          </p>
-          <p>
-            El meu objectiu és aportar valor en entorns professionals on la disciplina, la curiositat i la seguretat
-            formen part del treball diari.
-          </p>
+          <p class="section-subtitle">Una breu presentació per a docents, reclutadors i empreses.</p>
+          <p>Estic cursant <strong>CFGS Administració de Sistemes Informàtics en Xarxa (ASIR)</strong> amb especialització en <strong>Ciberseguretat</strong>. M'interessa construir una base sòlida en infraestructures, administració i protecció de sistemes.</p>
+          <p>Em motiva l'aprenentatge pràctic, l'anàlisi tècnica i la resolució de problemes reals. Busco seguir desenvolupant-me en xarxes, sistemes, seguretat ofensiva i bones pràctiques de protecció.</p>
+          <p>El meu objectiu és aportar valor en entorns professionals on la disciplina, la curiositat i la seguretat formen part del treball diari.</p>
         </article>
 
         <aside class="card about-card reveal">
@@ -584,7 +566,7 @@
             <div class="info-item"><span class="info-dot"></span><div><strong>Formació:</strong> ASIR · Especialització en Ciberseguretat</div></div>
             <div class="info-item"><span class="info-dot"></span><div><strong>Base:</strong> Sistemes, xarxes, virtualització i administració</div></div>
             <div class="info-item"><span class="info-dot"></span><div><strong>Enfocament:</strong> Seguretat, anàlisi i millora contínua</div></div>
-            <div class="info-item"><span class="info-dot"></span><div><strong>Disponibilitat:</strong> Projectes acadèmics, pràctiques i oportunitats junior</div></div>
+            <div class="info-item"><span class="info-dot"></span><div><strong>Disponibilitat:</strong> Pràctiques i oportunitats junior</div></div>
           </div>
         </aside>
       </div>
@@ -593,16 +575,13 @@
     <section id="habilitats">
       <div class="container card skills-card reveal">
         <h2 class="section-title">Habilitats</h2>
-        <p class="section-subtitle">
-          Selecció de tecnologies i àrees en què tinc formació, pràctica o interès actiu.
-        </p>
-
+        <p class="section-subtitle">Selecció de tecnologies i àrees en què tinc formació, pràctica o interès actiu.</p>
         <div class="skills-grid">
           <div class="skill"><strong>Xarxes</strong><span>TCP/IP, subnetting, routing, switching, VLANs.</span></div>
           <div class="skill"><strong>Linux</strong><span>Terminal, serveis, permisos, administració bàsica.</span></div>
           <div class="skill"><strong>Ciberseguretat</strong><span>Hardening, anàlisi, bones pràctiques i defensa.</span></div>
           <div class="skill"><strong>Windows Server</strong><span>Serveis, usuaris, polítiques i administració.</span></div>
-          <div class="skill"><strong>Active Directory</strong><span>Dominis, objectes, gestió d’usuaris i equips.</span></div>
+          <div class="skill"><strong>Active Directory</strong><span>Dominis, objectes, gestió d'usuaris i equips.</span></div>
           <div class="skill"><strong>Wireshark</strong><span>Captura i anàlisi de trànsit de xarxa.</span></div>
           <div class="skill"><strong>Kali Linux</strong><span>Entorn de proves, auditoria i eines pentest.</span></div>
           <div class="skill"><strong>Eines</strong><span>Nmap, SSH, VPN, virtualització i utilitats tècniques.</span></div>
@@ -612,26 +591,42 @@
 
     <section id="carta">
       <div class="container card letter-card reveal">
-        <h2 class="section-title">Carta de presentació</h2>
-        <p class="section-subtitle">
-          Secció desplegable per incloure la teva carta completa. Aquí pots enganxar el text final quan el tinguis llest.
-        </p>
+        <h2 class="section-title">Carta d'autocandidatura</h2>
+        <p class="section-subtitle">Carta de presentació professional per a empreses i departaments IT.</p>
 
         <div class="accordion">
           <details>
             <summary>
-              <span>Veure carta de presentació</span>
+              <span>Veure carta d'autocandidatura</span>
               <span class="summary-hint">Desplegar / ocultar</span>
               <svg class="chev" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </summary>
             <div class="letter-content">
-              <!-- ENGANXA AQUÍ LA TEVA CARTA DE PRESENTACIÓ COMPLETA -->
-              <p class="letter-placeholder">
-                <strong>Placeholder:</strong> aquí anirà la teva carta de presentació completa.
-                Substitueix aquest text pel contingut final quan el tinguis.
-              </p>
+              <div class="letter-header">
+                <strong>Deyvin Jose García M.</strong>
+                <span>Reus, Tarragona &nbsp;·&nbsp; 633 58 96 29 &nbsp;·&nbsp; deyvingarcias8@gmail.com</span>
+              </div>
+
+              <p>A l'atenció de la persona responsable de Recursos Humans / Departament IT,</p>
+
+              <p>Em poso en contacte amb vostès per presentar-los el meu perfil professional com a futur tècnic en sistemes i ciberseguretat. Com a estudiant del CFGS en Sistemes Informàtics i Ciberseguretat, m'agradaria oferir la meva candidatura per realitzar les meves pràctiques o iniciar una col·laboració professional amb la seva organització.</p>
+
+              <p>Al llarg dels meus estudis, he adquirit competències clau per al manteniment i la protecció d'infraestructures informàtiques, destacant:</p>
+
+              <ul>
+                <li><strong>Administració de xarxes:</strong> Configuració de protocols TCP/IP, subnetting, VLANs, DHCP i NAT.</li>
+                <li><strong>Gestió de sistemes:</strong> Domini d'entorns Linux i Windows, incloent la gestió d'usuaris, permisos i virtualització amb eines com VirtualBox.</li>
+                <li><strong>Bases de dades:</strong> Disseny, modelatge i explotació de bases de dades SQL en entorns Oracle i MariaDB.</li>
+                <li><strong>Seguretat aplicada:</strong> Implementació de protocols de defensa en llocs web corporatius i gestió de còpies de seguretat automàtiques al núvol.</li>
+              </ul>
+
+              <p>Em considero un professional organitzat, atent als detalls i amb una gran motivació per aplicar els meus coneixements en entorns reals. Estic molt interessat a conèixer com la meva formació i les meves ganes de créixer poden encaixar en els seus futurs projectes.</p>
+
+              <p>Adjunto el meu currículum per a la seva revisió i quedo a la seva espera per concretar una possible reunió o entrevista.</p>
+
+              <div class="letter-sign">Cordialment,<br>Deyvin Jose García Morales</div>
             </div>
           </details>
         </div>
@@ -641,23 +636,17 @@
     <section id="contacte">
       <div class="container card contact-card reveal">
         <h2 class="section-title">Contacte</h2>
-        <p class="section-subtitle">
-          Enllaços directes perquè docents, recruiters i empreses et puguin localitzar fàcilment.
-        </p>
-
+        <p class="section-subtitle">Enllaços directes perquè docents, recruiters i empreses et puguin localitzar fàcilment.</p>
         <div class="contact-grid">
           <div class="contact-item">
             <span>LinkedIn</span>
-            <!-- Canvia aquest enllaç si actualitzes el teu perfil -->
             <a href="https://www.linkedin.com/in/deyvin-jose-garcia-morales-1039813b9/" target="_blank" rel="noopener noreferrer">
               linkedin.com/in/deyvin-jose-garcia-morales-1039813b9/
             </a>
           </div>
-
           <div class="contact-item">
             <span>Correu electrònic</span>
-            <!-- SUBSTITUEIX AQUEST CORREU pel teu -->
-            <p>tu-email@ejemplo.com</p>
+            <a href="mailto:deyvingarcias8@gmail.com">deyvingarcias8@gmail.com</a>
           </div>
         </div>
       </div>
@@ -672,10 +661,7 @@
   </footer>
 
   <script>
-    // Any automàtic
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Animació suau en entrar a pantalla
     const elements = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -685,7 +671,6 @@
         }
       });
     }, { threshold: 0.12 });
-
     elements.forEach((el) => observer.observe(el));
   </script>
 </body>
